@@ -1,3 +1,5 @@
 flask
 xlsxwriter
 pandas
+beautifulsoup4
+requests

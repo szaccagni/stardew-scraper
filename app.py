@@ -1,6 +1,9 @@
 from flask import Flask, render_template, make_response
 import pandas as pd
 import io
+import numpy as np
+
+from helper import get_recipes_and_ingredients
 
 
 app = Flask(__name__)
@@ -13,8 +16,8 @@ def index():
 @app.route('/download_recipes')
 def download_recipes():
     #Create DF
-    d = {'col1': [1, 2], 'col2': [3, 4]}
-    df = pd.DataFrame(d)
+    recipes = get_recipes_and_ingredients()
+    df = pd.DataFrame(np.array(recipes), columns=['recipe name', 'ingredient', 'quanitity'])
     
     # Creating output and writer (pandas excel writer)
     out = io.BytesIO()
