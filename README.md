@@ -5,4 +5,5 @@ This flask app is allowing me to easily scrape the stardew wiki for data to popu
 ## Techologies
 * Python
 * Flask
+* Pandas
 * Beautiful Soup - scrapping https://stardewvalleywiki.com/Cooking 
